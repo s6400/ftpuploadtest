@@ -2,24 +2,21 @@ const FtpDeploy = require("ftp-deploy");
 const ftpDeploy = new FtpDeploy();
 
 const config = {
-    user: "github",
+    user: process.env.user,
     // Password optional, prompted if none given
-    password: "git_12_2gr2_n56E",
-    host: "davida.ch-dns.net",
+    password: process.env.password,
+    host: process.env.host,
     port: 21,
-    localRoot: __dirname + "/../dist/",
-    remoteRoot: "./",
+    localRoot: process.env.localRoot,
+    remoteRoot: process.env.remoteRoot,
     // include: ["*", "**/*"],      // this would upload everything except dot files
-    include: ["*", ".*"],
+    include: process.env.include,
     // e.g. exclude sourcemaps, and ALL files in node_modules (including dot files)
-    exclude: [
-        "thumbs/*",
-        "qr/*",
-    ],
+    exclude: process.env.exclude,
     // delete ALL existing files at destination before uploading, if true
-    deleteRemote: false,
+    deleteRemote: process.env.deleteRemote,
     // Passive mode is forced (EPSV command is not sent)
-    forcePasv: true,
+    forcePasv: process.env.forcePasv,
     // use sftp or ftp
     sftp: false,
 };
