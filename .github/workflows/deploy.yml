@@ -32,7 +32,7 @@ jobs:
       - name: 🔨 Build Sync
        # uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         env:
-          server:  ${{ secrets.FTP_HOST_DAVIDA }}
+          server: ${{ secrets.ftp_host_davida }}
           username: ${{ toJson(secrets.FTP_USER_DAVIDA) }}
           password: ${{ secrets.FTP_PASSWORD_DAVIDA }}
           protocol: ftp
