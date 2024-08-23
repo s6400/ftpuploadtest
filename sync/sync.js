@@ -25,9 +25,7 @@ const config = {
 };
 
 ftpDeploy
-    .deploy(config)
+    .deploy(process.env)
     .then((res) => console.log("finished:", res))
     .catch((err) => console.log(err));
-
-console.log(process.env.PATH)
 
