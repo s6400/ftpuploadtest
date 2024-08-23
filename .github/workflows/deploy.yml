@@ -31,8 +31,8 @@ jobs:
       - name: 🔨 Build Sync
         env:
           host: davida.ch-dns.net
-          user: ${{ secrets.ftp_user_davida }}
-          password: ${{ secrets.ftp_password_davida }}
+          user: ${{ toJson(secrets.ftp_user_davida) }}
+          password: ${{ toJson(secrets.ftp_password_davida) }}
           localRoot: ./dist/
           include: '{"*" , ".*"}'                
           exclude: '{"thumbs/*", "qr/*" }'                                                                   
