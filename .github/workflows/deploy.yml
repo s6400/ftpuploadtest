@@ -30,8 +30,7 @@ jobs:
 #        run: ls -lah *
       - name: 🔨 Build Sync
         run: |
-          cd sync
-          npm install
+          node sync/sync.js
       
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
