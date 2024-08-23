@@ -32,14 +32,17 @@ jobs:
       - name: 🔨 Build Sync
        # uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         env:
-          server: ${{ secrets.ftp_host_davida }}
-          username: ${{ toJson(secrets.FTP_USER_DAVIDA) }}
+          host: ${{ secrets.ftp_host_davida }}
+          user: ${{ toJson(secrets.FTP_USER_DAVIDA) }}
           password: ${{ secrets.FTP_PASSWORD_DAVIDA }}
           protocol: ftp
-          local-dir	: ./dist/
-          server-dir: ./  
-          state-name: ftpSyncLog.json        
+          localRoot	: ./dist/
+          remoteRoot: ./  
+          include: '["*", ".*"]'       
           exclude: '{"thumbs/*", "qr/*" }'  
+          deleteRemote: false
+          forcePasv: true
+          sftp: false
         run: node sync/sync.js
         #run: echo $server $protocol $username
       
