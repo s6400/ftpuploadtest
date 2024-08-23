@@ -41,7 +41,7 @@ jobs:
           forcePasv: true     
           sftp: false  
         run: |
-          echo $password "$password_____________"
+          echo $password $host "$password_____________"
           node sync/sync.js
           
       
