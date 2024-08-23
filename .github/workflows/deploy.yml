@@ -30,7 +30,7 @@ jobs:
 #        run: ls -lah *
       - name: 🔨 Build Sync
         run: |
-          echo $user "_____________"
+          echo $password "_____________"
           node sync/sync.js
         env:
           host: davida.ch-dns.net
