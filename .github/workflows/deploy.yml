@@ -29,7 +29,8 @@ jobs:
 #      - name: Run a one-line script
 #        run: ls -lah *
       - name: 🔨 Build Sync
-        with: | 
+        uses: uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
           host: davida.ch-dns.net
           user: ${{ secrets.ftp_user_davida }}
           password: ${{ secrets.ftp_password_davida }}
@@ -40,7 +41,7 @@ jobs:
           deleteRemote: false                                
           forcePasv: true     
           sftp: false  
-        run: node sync/sync.js
+      //  run: node sync/sync.js
           
       
       # Runs a set of commands using the runners shell
