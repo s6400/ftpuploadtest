@@ -30,6 +30,6 @@ jobs:
       - name: Run a multi-line script
         run: |
          echo $host "___"
-        ev:
+        env:
           host: davida.ch-dns.net
          
