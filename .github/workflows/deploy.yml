@@ -35,11 +35,11 @@ jobs:
           user: ${{ secrets.ftp_user_davida }}
           password: ${{ secrets.ftp_password_davida }}
           localRoot: ./dist/
-          include: | 
-            "*"
+          include:
+            "*",
             ".*"                
-          exclude: │
-            "thumbs/*"
+          exclude:
+            "thumbs/*",
             "qr/*"                                                                   
           # delete ALL existing files at destination before uploading, if true   
           deleteRemote: false                                
