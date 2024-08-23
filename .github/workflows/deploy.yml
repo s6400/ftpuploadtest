@@ -29,10 +29,10 @@ jobs:
 #      - name: Run a one-line script
 #        run: ls -lah *
       - name: 🔨 Build Sync
-        env:
+        with:
           host: davida.ch-dns.net
-          user: ${{ toJson(secrets.ftp_user_davida) }}
-          password: ${{ toJson(secrets.ftp_password_davida) }}
+          user: ${{ secrets.ftp_user_davida }}
+          password: ${{ secrets.ftp_password_davida }}
           localRoot: ./dist/
           include: '{"*" , ".*"}'                
           exclude: '{"thumbs/*", "qr/*" }'                                                                   
@@ -41,7 +41,6 @@ jobs:
           forcePasv: true     
           sftp: false  
         run: |
-          echo $password $host "$password_____________"
           node sync/sync.js
           
       
