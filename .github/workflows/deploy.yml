@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: 🚀 Deploy website
 
 # Controls when the workflow will run
 on:
@@ -21,15 +21,21 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-
+      - name: 🔨 Build Project
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.3.0'
       # Runs a single command using the runners shell
 #      - name: Run a one-line script
 #        run: ls -lah *
-
+      - name: 🔨 Build Sync
+        run: cd sync
+        run: npm install
+      
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-         rsync
+          echo "hallo"
         env:
           host: davida.ch-dns.net
           user: ${{ secrets.ftp_user_davida }}
