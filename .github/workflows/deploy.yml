@@ -28,8 +28,9 @@ jobs:
       # Runs a single command using the runners shell
 #      - name: Run a one-line script
 #        run: ls -lah *
-      - name: 🔨 Build Sync
+      - name: cd sync
         run: cd sync
+      - name: 🔨 Build Sync
         run: npm install
       
       # Runs a set of commands using the runners shell
