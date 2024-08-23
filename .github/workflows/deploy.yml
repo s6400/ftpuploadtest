@@ -29,7 +29,21 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-         echo $host "___"
+         echo $exclude "___"
         env:
           host: davida.ch-dns.net
+          user: ${{ secrets.ftp_user_davida }}
+          password: ${{ secrets.ftp_password_davida }}
+          localRoot: ./dist/
+          include: | 
+            "*"
+            ".*"                
+          exclude: │
+            "thumbs/*"
+            "qr/*"                                                                   
+          # delete ALL existing files at destination before uploading, if true   
+          deleteRemote: false                                
+          forcePasv: true     
+          sftp: false  
+
          
