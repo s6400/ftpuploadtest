@@ -1,3 +1,7 @@
+const FtpDeploy = require("ftp-deploy");
+const ftpDeploy = new FtpDeploy();
+
+
 const config = {
     user: "github",
     // Password optional, prompted if none given
