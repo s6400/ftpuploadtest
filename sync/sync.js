@@ -23,9 +23,9 @@ const config = {
     // use sftp or ftp
     sftp: false,
 };
-
-ftpDeploy
+console.log(process.env)
+/*ftpDeploy
     .deploy(process.env)
     .then((res) => console.log("finished:", res))
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(err));*/
 
