@@ -31,9 +31,9 @@ jobs:
       - name: 🔨 Build Sync
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: davida.ch-dns.net
-          username: ${{ secrets.ftp_user_davida }}
-          password: ${{ secrets.ftp_password_davida }}
+          server:  ${{ secrets.FTP_HOST_DAVIDA }}
+          username: ${{ secrets.FTP_USER_DAVIDA }}
+          password: ${{ secrets.FTP_PASSWORD_DAVIDA }}
           protocol: ftp
           local-dir	: ./dist/
           server-dir: ./  
